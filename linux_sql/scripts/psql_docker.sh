@@ -1,29 +1,28 @@
 #! /bin/sh
 
-#capture CLI arguments (please do not copy comments)
+#input arguments
 cmd=$1
 db_username=$2
 db_password=$3
 
 #Start docker
-#Make sure you understand `||` cmd
 sudo systemctl status docker || systemctl start docker
 
-#check container status (try the following cmds on terminal)
+#check container status
 docker container inspect jrvs-psql
 container_status=$?
 
-#User switch case to handle create|stop|start opetions
+#switch case for create|stop|start options
 case $cmd in
   create)
 
-  # Check if the container is already created
+  # Check if the container is created
   if [ $container_status -eq 0 ]; then
 		echo 'Container already exists'
 		exit 1
 	fi
 
-  #check # of CLI arguments
+  #check # of arguments
   if [ $# -ne 3 ]; then
     echo 'Create requires username and password'
     exit 1
@@ -53,3 +52,4 @@ case $cmd in
 	exit 1
 	;;
 esac
+exit 0
