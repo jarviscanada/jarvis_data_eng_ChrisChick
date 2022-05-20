@@ -1,2 +1,2 @@
-INSERT INTO host_info (id, hostname, cpu_number, cpu_architecture, cpu_model, cpu_mhz, L2_cache, total_mem, timestamp)
-VALUES(DEFAULT, :hostname, :cpu_number, :cpu_architecture, :cpu_cpu_model, :cpu_mhz, :l2_cache, :total_mem, :timestamp);
+INSERT INTO host_info (id, hostname, cpu_num, cpu_architecture, cpu_model, cpu_mhz, L2_cache, total_mem, "Timestamp")
+VALUES(DEFAULT, :hostname, :cpu_number, :cpu_architecture, :cpu_model, :cpu_mhz, :l2_cache, :total_mem, :timestamp);

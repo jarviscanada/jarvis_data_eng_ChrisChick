@@ -1,4 +1,3 @@
-timestamp=$(date -u "+%F %T")
 CREATE TABLE host_info
     (
         id SERIAL NOT NULL,
