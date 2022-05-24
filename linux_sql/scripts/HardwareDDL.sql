@@ -1,4 +1,4 @@
-CREATE TABLE host_info
+CREATE TABLE PUBLIC.host_info
     (
         id SERIAL NOT NULL,
         hostname VARCHAR NOT NULL,
@@ -10,4 +10,4 @@ CREATE TABLE host_info
         Total_mem INTEGER NOT NULL,
         "Timestamp" TIMESTAMP NOT NULL,
         PRIMARY KEY (id)
-    )
+    );
