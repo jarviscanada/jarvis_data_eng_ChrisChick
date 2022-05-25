@@ -9,5 +9,5 @@ disk_io=$(vmstat -d | awk '{print $4}' | tail -n1 | xargs)
 disk_available=$(df -BM / | awk '{print $4}' | tail -n1 | tr -d M | xargs)
 timestamp=$(date -u "+%F %T")
 
-psql -h localhost -p 5432 -U postgres -d postgres -f ResourceUsageDML.sql -v timestamp="'$timestamp'" -v host_id=$host_id \
+psql -h localhost -p 5432 -U postgres -d postgres -a -f ResourceUsageDML.sql -v timestamp="'$timestamp'" -v host_id=$host_id \
 -v memory_free=$memory_free -v cpu_idle=$cpu_idle -v cpu_kernel=$cpu_kernel -v disk_io=$disk_io -v disk_available=$disk_available
