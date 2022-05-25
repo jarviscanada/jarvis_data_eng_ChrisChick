@@ -31,6 +31,9 @@ timestamp=$(date -u "+%F %T")
 insert_stmt="INSERT INTO host_info (id, hostname, cpu_num, cpu_architecture, cpu_model, cpu_mhz, L2_cache, total_mem, "Timestamp") \
 VALUES(DEFAULT, '$hostname', $cpu_number, '$cpu_architecture', $cpu_model, $cpu_mhz, $l2_cache, $total_mem, '"$timestamp"')"
 
+#set environment variable for psql password
+export PGPASSWORD=$psql_password
+
 #insert into database
 psql -h $psql_host -p $psql_port -d $db_name -U $psql_user -c "$insert_stmt"
 exit 0
