@@ -8,6 +8,6 @@ CREATE TABLE PUBLIC.host_info
         cpu_mhz VARCHAR NOT NULL,
         L2_cache INTEGER NOT NULL,
         Total_mem INTEGER NOT NULL,
-        "Timestamp" TIMESTAMP NOT NULL,
+        "timestamp" TIMESTAMP NOT NULL,
         PRIMARY KEY (id)
     );
