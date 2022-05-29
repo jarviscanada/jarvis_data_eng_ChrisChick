@@ -5,15 +5,15 @@ In this project, I designed a MVP that was able to monitor a cluster for the Jar
 
 #Quick Start
 Create psql instance using psql_docker.sh
-`./scripts/psql_docker.sh create db_username db_password`
+```./scripts/psql_docker.sh create db_username db_password```
 Start psql instance using psql_docker.sh
-`./scripts/psql_docker.sh start`
+```./scripts/psql_docker.sh start```
 Create host_info and host_usage tables using ddl.sql
-`psql -h host -U user -d host -f sql/ddl.sql`
+```psql -h host -U user -d host -f sql/ddl.sql```
 Use host_info.sh to insert hardware specs into database
-`./scripts/host_info.sh "host" port "database" "db_username" "db_password"`
+```./scripts/host_info.sh "host" port "database" "db_username" "db_password"```
 Use host_usage.sh to insert usage data into database
-`./scripts/host_usage.sh "host" port "database" "db_username" "db_password"`
+```./scripts/host_usage.sh "host" port "database" "db_username" "db_password"```
 Set up crontab to run host_usage.sh every minute
 ```
 crontab -e
