@@ -26,7 +26,7 @@ Use host_usage.sh to insert usage data into database
 ```
 Set up crontab to run host_usage.sh every minute
 ```
-crontab -e
+bash>crontab -e
 * * * * * bash /home/centos/dev/jrvs/bootcamp/linux_sql/host_agent/scripts/host_usage.sh localhost 5432 host_agent postgres password > /tmp/host_usage.log
 ```
 
@@ -46,17 +46,20 @@ Shell script description and usage (use markdown code block for script usage)
 ## Database Modeling
 Schema of tables
 - `host_info`
-id|hostname|cpu_num|cpu_architecture|cpu_model|cpu_mhz|l2_cache|total_mem|timestamp
----|---|---|---|---|---|---|---
-integer|varchar|integer|varchar|varchar|varchar|int|timestamp
-primary key|---|---|---|---|---|---|---
+
+|id|hostname|cpu_num|cpu_architecture|cpu_model|cpu_mhz|l2_cache|total_mem|timestamp|
+|---|---|---|---|---|---|---|---|---|
+|integer|varchar|integer|varchar|varchar|varchar|int|timestamp|
+|primary key|---|---|---|---|---|---|---|---|
+
 - `host_usage`
-timestamp|host_id|memory_free|cpu_idle|cpu_kernel|disk_io|disk_available
----|---|---|---|---|---|---
-timestamp|integer|integer|integer|integer|integer|integer
-primary key|primary key|---|---|---|---|---
----|foreign key|---|---|---|---|---
----|id from host_info|---|---|---|---|---
+
+|timestamp|host_id|memory_free|cpu_idle|cpu_kernel|disk_io|disk_available|
+|---|---|---|---|---|---|---|
+|timestamp|integer|integer|integer|integer|integer|integer|
+|primary key|primary key|---|---|---|---|---|
+|---|foreign key|---|---|---|---|---|
+|---|id from host_info|---|---|---|---|---|
 
 # Test
 Bash scripts were tested using the CLI and SQL queries were tested using PostgreSQL. All scripts and queries were tested on single machine. Bash scripts were tested for all functionalities manually and SQL queries were tested with test data entered into database.
