@@ -6,7 +6,7 @@ In this project, I designed a MVP that was able to monitor a cluster for the Jar
 # Quick Start
 Create psql instance using psql_docker.sh
 ```
-./scripts/psql_docker.sh create db_username db_password
+./scripts/psql_docker.sh create postgres password
 ```
 Start psql instance using psql_docker.sh
 ```
@@ -14,15 +14,15 @@ Start psql instance using psql_docker.sh
 ```
 Create host_info and host_usage tables using ddl.sql
 ```
-psql -h host -U user -d host -f sql/ddl.sql
+psql -h localhost -U postgres -d host_agent -f sql/ddl.sql
 ```
 Use host_info.sh to insert hardware specs into database
 ```
-./scripts/host_info.sh "host" port "database" "db_username" "db_password"
+./scripts/host_info.sh "localhost" 5432 "host_agent" "postgres" "password"
 ```
 Use host_usage.sh to insert usage data into database
 ```
-./scripts/host_usage.sh "host" port "database" "db_username" "db_password"
+./scripts/host_usage.sh "localhost" 5432 "host_agent" "postgres" "password"
 ```
 Set up crontab to run host_usage.sh every minute
 ```
@@ -44,12 +44,22 @@ Shell script description and usage (use markdown code block for script usage)
 - queries.sql (describe what business problem you are trying to resolve)
 
 ## Database Modeling
-Describe the schema of each table using markdown table syntax (do not put any sql code)
+Schema of tables
 - `host_info`
+id|hostname|cpu_num|cpu_architecture|cpu_model|cpu_mhz|l2_cache|total_mem|timestamp
+---|---|---|---|---|---|---|---
+integer|varchar|integer|varchar|varchar|varchar|int|timestamp
+primary key|---|---|---|---|---|---|---
 - `host_usage`
+timestamp|host_id|memory_free|cpu_idle|cpu_kernel|disk_io|disk_available
+---|---|---|---|---|---|---
+timestamp|integer|integer|integer|integer|integer|integer
+primary key|primary key|---|---|---|---|---
+---|foreign key|---|---|---|---|---
+---|id from host_info|---|---|---|---|---
 
 # Test
-How did you test your bash scripts and SQL queries? What was the result?
+Bash scripts were tested using the CLI and SQL queries were tested using PostgreSQL. All scripts and queries were tested on single machine. Bash scripts were tested for all functionalities manually and SQL queries were tested with test data entered into database.
 
 # Deployment
 How did you deploy your app? (e.g. Github, crontab, docker)
