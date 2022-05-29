@@ -22,7 +22,7 @@ hostname=$(hostname -f)
 memory_free=$(echo "$mem_info" | egrep "MemFree:" | awk '{print $2}' | xargs)
 cpu_idle=$(echo "$vmstatt" | egrep "id" -A1 | tail -n 1 | awk '{print $15}' | xargs)
 cpu_kernel=$(echo "$vmstatt" | egrep "id" -A1 | tail -n 1 | awk '{print $14}' | xargs)
-disk_io=$(vmstat -d | awk '{print $4}' | tail -n1 | xargs)
+disk_io=$(vmstat -d | awk '{print $10}' | tail -n1 | xargs)
 disk_available=$(df -BM / | awk '{print $4}' | tail -n1 | tr -d M | xargs)
 timestamp=$(date -u "+%F %T")
 
