@@ -1,5 +1,4 @@
 # Linux Cluster Monitoring Agent
-This project is under development. Since this project follows the GitFlow, the final work will be merged to the main branch after Team Code Team
 # Introduction (150-200 words)
 In this project, I designed a MVP that was able to monitor a cluster for the Jarvis Linux Cluster Administration (LCA). This product needed to record hardware specifications and resource usage of nodes the LCA managed in real time. The program was made using Linux command lines, Bash scripts, PostgreSQL, docker and crontab. The product is able to create databases and insert the hardware specifications and data usage onto the database. The code for this project was managed using git and stored on GitHub.
 
@@ -31,7 +30,8 @@ bash>crontab -e
 ```
 
 # Implemenation
-Discuss how you implement the project.
+SQL scripts were written and run through PostgreSQL using bash scripts. Data used for insert statements into the database were taken using bash scripts and creating an insert SQL statement. The bash scripts were then run at a set interval using crontab.
+
 ## Architecture
 Draw a cluster diagram with three Linux hosts, a DB, and agents (use draw.io website). Image must be saved to the `assets` directory.
 
