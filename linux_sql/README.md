@@ -33,7 +33,7 @@ bash>crontab -e
 SQL scripts were written and run through PostgreSQL using bash scripts. Data used for insert statements into the database were taken using bash scripts and creating an insert SQL statement. The bash scripts were then run at a set interval using crontab.
 
 ## Architecture
-Draw a cluster diagram with three Linux hosts, a DB, and agents (use draw.io website). Image must be saved to the `assets` directory.
+[Architecture diagram](./assets/Architecture.drawio.png)
 
 ## Scripts
 Shell script description and usage (use markdown code block for script usage)
