@@ -1,0 +1,2 @@
+INSERT INTO host_usage ("timestamp", host_id, memory_free, cpu_idle, cpu_kernel, disk_io, disk_available)
+VALUES(:timestamp, (SELECT(id) FROM host_info), :memory_free, :cpu_idle, :cpu_kernel, :disk_io, :disk_available);
