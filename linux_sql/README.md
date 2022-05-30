@@ -1,6 +1,9 @@
 # Linux Cluster Monitoring Agent
-# Introduction (150-200 words)
-In this project, I designed a MVP that was able to monitor a cluster for the Jarvis Linux Cluster Administration (LCA). This product needed to record hardware specifications and resource usage of nodes the LCA managed in real time. The program was made using Linux command lines, Bash scripts, PostgreSQL, docker and crontab. The product is able to create databases and insert the hardware specifications and data usage onto the database. The code for this project was managed using git and stored on GitHub.
+# Introduction
+For this project the Jarvis Linux Cluster Administration (LCA) requested a product that would be able to record hardware specifications and resource usage of their Linux Cluster which contains 10 nodes/servers running on CentOS 7. The servers are internally connected and able to communicate using internal IPv4 addresses through a switch. The data gathered will be stored on a RDBMS database and the information stored would be used to generate reports for future resource planning purposes.
+
+This project was made using Linux command lines, Bash scripts, PostgreSQL, docker and crontab. This product is able to create databases and insert the hardware specifications and data usage onto the database. The code for this project was managed using git and stored on GitHub.
+
 
 # Quick Start
 Create psql instance using psql_docker.sh
@@ -36,12 +39,44 @@ SQL scripts were written and run through PostgreSQL using bash scripts. Data use
 [Architecture diagram](./assets/Architecture.drawio.png)
 
 ## Scripts
-Shell script description and usage (use markdown code block for script usage)
+Shell script description and usage
 - psql_docker.sh
+
+Starts docker and creates, starts or stops psql instance.
+```
+./scripts/docker.sh start|stop|create db_username db_password
+```
+- ddl.sql
+
+Creates host_info and host_usage tables
+```
+psql -h psql_host -p psql_port -d db_name -U psql_user -f ./scripts/sql/ddl.sql
+```
 - host_info.sh
+
+Insert hardware data into host_info database
+```
+./scripts/host_info.sh psql_host psql_port db_name psql_user psql_password
+```
 - host_usage.sh
+
+Insert usage data into host_usage database
+```
+./scripts/host_usage.sh psql_host psql_port db_name psql_user psql_password
+```
 - crontab
-- queries.sql (describe what business problem you are trying to resolve)
+
+Run host_usage.sh script every minute
+```
+bash>crontab -e
+* * * * * bash /home/centos/dev/jrvs/bootcamp/linux_sql/host_agent/scripts/host_usage.sh localhost 5432 host_agent postgres password > /tmp/host_usage.log
+```
+- queries.sql
+
+This file first groups the hosts by number of cpu, and then sorts them by the total memory of each host, the second output shows the average memory usage of each host over five minutes. The final output will show if crontab has failed to update more than 3 times in a five minute interval which would mean a host failure has occurred.
+```
+./scripts/queries.sql
+```
 
 ## Database Modeling
 Schema of tables
@@ -65,11 +100,9 @@ Schema of tables
 Bash scripts were tested using the CLI and SQL queries were tested using PostgreSQL. All scripts and queries were tested on single machine. Bash scripts were tested for all functionalities manually and SQL queries were tested with test data entered into database.
 
 # Deployment
-How did you deploy your app? (e.g. Github, crontab, docker)
+This app was deployed through Github, docker and crontab. Docker was used to host a psql instance and crontab was used to run a bash script to update the tables every minute. Github was used for version control of the files in this project.
 
 # Improvements
-Write at least three things you want to improve 
-e.g. 
-- handle hardware update 
-- blah
-- blah
+- Be able to notify if host failure has occurred
+- Make script usage commands easier to use/more simple for users
+- handle hardware update
