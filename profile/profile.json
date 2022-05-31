@@ -1,0 +1,117 @@
+{
+  "education": [
+    {
+      "awards_achievements": null,
+      "degree": "Bachelor of Honours Sciences",
+      "department": "Science",
+      "duration": "2018-2022",
+      "school_name": "University of Waterloo"
+    },
+    {
+      "awards_achievements": [
+        "Graduated with Honours Standing"
+      ],
+      "degree": "Highschool Diploma",
+      "department": "N/A",
+      "duration": "2013-2018",
+      "school_name": "St. George's School"
+    }
+  ],
+  "github_repo_root_url": "https://github.com/jarviscanada/jarvis_data_eng_ChrisChick",
+  "highlighted_projects": [
+    {
+      "description": "Not any projects have been completed at the moment",
+      "git_url": "https://github.com/jarviscanada/jarvis_profile_builder",
+      "name": "N/A"
+    }
+  ],
+  "jarvis_projects": [
+    {
+      "description": "Created a product that used Bash and SQL scripts to gather information on hardware and usage data to store in an RDBMS system. PostgreSQL was used and set up using docker and crontab was used to run a bash script that contained an SQL insert statement at set intervals.",
+      "git_url": "/linux_sql",
+      "name": "Cluster Monitor"
+    },
+    {
+      "description": [
+        "Twitter App: Curabitur laoreet tristique leo, eget suscipit nisi. Sed in sodales ex. Maecenas vitae tincidunt dui, et eleifend quam.",
+        "JDBC App: Curabitur laoreet tristique leo, eget suscipit nisi. Sed in sodales ex. Maecenas vitae tincidunt dui, et eleifend quam.",
+        "Grep App: Curabitur laoreet tristique leo, eget suscipit nisi. Sed in sodales ex. Maecenas vitae tincidunt dui, et eleifend quam."
+      ],
+      "git_url": "/core_java",
+      "name": "Core Java Apps"
+    },
+    {
+      "description": "",
+      "git_url": "/springboot",
+      "name": "Springboot App"
+    },
+    {
+      "description": "",
+      "git_url": "/python_data_anlytics",
+      "name": "Python Data Analytics"
+    },
+    {
+      "description": "",
+      "git_url": "/hadoop",
+      "name": "Hadoop"
+    },
+    {
+      "description": "",
+      "git_url": "/spark",
+      "name": "Spark"
+    },
+    {
+      "description": "",
+      "git_url": "/cloud_devops",
+      "name": "Cloud/DevOps"
+    }
+  ],
+  "name": "Chris Chick",
+  "others": [
+    {
+      "bullets": [
+        "Rock Climbing/Bouldering",
+        "Computer gaming"
+      ],
+      "title": "Activities/Hobbies"
+    }
+  ],
+  "professional_experience": [
+    {
+      "company": "Jarvis",
+      "description": "Working as an employee of Jarvis trained to maintain software, applications and other computer systems.",
+      "duration": "2020-present",
+      "title": "Software Developer"
+    },
+    {
+      "company": "Ontario College of Family Physicians",
+      "description": "Analyzed large sets of data, produced reports and ran presentations, participated in board meetings, reviewed financial records and managed communications between clients and OCFP.",
+      "duration": "2020-2020",
+      "title": "Analyst"
+    }
+  ],
+  "skills": {
+    "competent": [
+      "JavaScript",
+      "HTML",
+      "CSS",
+      "Docker",
+      "RDBMS/SQL"
+    ],
+    "familiar": [
+      "R",
+      "MySQL",
+      "PostgreSQL",
+      "Google Cloud Platform",
+      "PHP"
+    ],
+    "proficient": [
+      "Python",
+      "Java",
+      "Linux/Bash",
+      "Agile/Scrum",
+      "Git"
+    ]
+  },
+  "summary": "I am an aspiring software developer that enjoys learning and problem solving. I am a detail-oriented, team player that enjoys a challenge. I graduated from the University of Waterloo with a Bachelor of Honours Science. I am very familiar with Python and Java and have a background in SQL. I enjoy learning new languages, coming up with creative solutions and overcoming obstacles. In my spare time I enjoy playing team-based video games with my friends as well as snowboarding, rock climbing and bouldering."
+}

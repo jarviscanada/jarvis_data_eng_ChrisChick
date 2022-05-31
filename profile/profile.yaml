@@ -1,0 +1,109 @@
+# Preferred name (Characters only)
+name: "Chris Chick"
+# Your GitHub repo root URL
+github_repo_root_url: https://github.com/jarviscanada/jarvis_data_eng_ChrisChick
+
+# Introduce yourself, your academic and professional background.
+# What excites you about the software industry and your passion. At least 80 words
+summary: I am an aspiring software developer that enjoys learning and problem solving. I am a detail-oriented, team player that enjoys a challenge. I graduated from the University of Waterloo with a Bachelor of Honours Science. I am very familiar with Python and Java and have a background in SQL. I enjoy learning new languages, coming up with creative solutions and overcoming obstacles. In my spare time I enjoy playing team-based video games with my friends as well as snowboarding, rock climbing and bouldering. 
+
+# Group your skills by level.
+# Your skills can be anything software related (e.g. language, frameworks, methodologies, software, etc.).
+skills:
+  # At least 5 skills
+  proficient:
+    - Python
+    - Java
+    - Linux/Bash
+    - Agile/Scrum
+    - Git
+  # At least 5 skills
+  competent:
+    - JavaScript
+    - HTML
+    - CSS
+    - Docker
+    - RDBMS/SQL
+  # At least 5 skills
+  familiar:
+    - R
+    - MySQL
+    - PostgreSQL
+    - Google Cloud Platform
+    - PHP
+
+# List of Jarvis projects
+jarvis_projects:
+  - name: "Cluster Monitor"
+    git_url: "/linux_sql"
+    # The project description allows hiring managers to understand your project and technologies you used(e.g. programming languages, libraries, algorithms, hardware, tools, etc.).
+    # The project description must start with an action verb (https://bit.ly/3guO98u)
+    description: Created a product that used Bash and SQL scripts to gather information on hardware and usage data to store in an RDBMS system. PostgreSQL was used and set up using docker and crontab was used to run a bash script that contained an SQL insert statement at set intervals.
+  - name: "Core Java Apps"
+    git_url: "/core_java"
+    description:
+      - "Twitter App: Curabitur laoreet tristique leo, eget suscipit nisi. Sed in sodales ex. Maecenas vitae tincidunt dui, et eleifend quam."
+      - "JDBC App: Curabitur laoreet tristique leo, eget suscipit nisi. Sed in sodales ex. Maecenas vitae tincidunt dui, et eleifend quam."
+      - "Grep App: Curabitur laoreet tristique leo, eget suscipit nisi. Sed in sodales ex. Maecenas vitae tincidunt dui, et eleifend quam."
+  - name: "Springboot App"
+    git_url: "/springboot"
+    description: ""
+  - name: "Python Data Analytics"
+    git_url: "/python_data_anlytics"
+    description: ""
+  - name: "Hadoop"
+    git_url: "/hadoop"
+    description: ""
+  - name: "Spark"
+    git_url: "/spark"
+    description: ""
+  - name: "Cloud/DevOps"
+    git_url: "/cloud_devops"
+    description: ""
+
+# List of personal or academic projects
+# Feel free to add more projects
+highlighted_projects:
+    #project name
+  - name: "N/A"
+    #URL is optional
+    git_url: "https://github.com/jarviscanada/jarvis_profile_builder"
+    # The project description must start with an action verb (https://bit.ly/3guO98u)
+    description: Not any projects have been completed at the moment
+
+#List of professional experience
+#The job description allows hiring managers to understand your job and the technologies you used(e.g. programming languages, libraries, algorithms, hardware, tools, etc.).
+#The description must be more than 25 words. If your experience is not software related, please focus on soft skills and achievements (e.g. team collaboration, problem-solving, improvements, communication).
+professional_experience:
+  #Write your Jarvis role as a professional experience rather than training.
+  - title: "Software Developer"
+    company: "Jarvis"
+    duration: "2020-present"
+    # The project description must start with an action verb (https://bit.ly/3guO98u)
+    description: "Working as an employee of Jarvis trained to maintain software, applications and other computer systems."
+  - title: "Analyst"
+    company: "Ontario College of Family Physicians"
+    duration: "2020-2020"
+    description: "Analyzed large sets of data, produced reports and ran presentations, participated in board meetings, reviewed financial records and managed communications between clients and OCFP."
+
+#List of edcuation
+education: 
+  - school_name: "University of Waterloo"
+    duration: "2018-2022"
+    degree: "Bachelor of Honours Sciences"
+    department: "Science"
+    awards_achievements:
+  - school_name: "St. George's School"
+    duration: "2013-2018"
+    degree: "Highschool Diploma"
+    department: "N/A"
+    awards_achievements: 
+        - "Graduated with Honours Standing"
+
+#Optional section
+others:
+    #category
+  - title: "Activities/Hobbies"
+    bullets:
+      - "Rock Climbing/Bouldering"
+      - "Computer gaming"
